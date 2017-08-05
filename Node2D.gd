@@ -7,6 +7,8 @@ extends Node2D
 var count = 0
 
 func _ready():
-	while count < 100:
+	get_node("number").set_text(String(0))
+	while count < 10000:
 		count+=1
-		number.set_text(count)
+		if count % 10 == 0:
+			get_node("number").set_text(String(count))
