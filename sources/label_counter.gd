@@ -12,3 +12,6 @@ func _process(delta):
 	rounded_time = round(countdown_time)
 	set_text(str(rounded_time))
 	pass
+	if rounded_time <= 0:
+		set_text("Time's up!")
+		queue_free()
