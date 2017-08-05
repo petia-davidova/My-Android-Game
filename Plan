@@ -1,11 +1,11 @@
 TO DO:
 
 1. Make a very simple app with Godot wich only shows a label and export it
-    -make a Label node to show the digits
-        -adjust font and size
-    -put a background image
-    -maybe do a while loop to increment numbers/change label
-    -find out how to export to .apk
+    V -make a Label node to show the digits 
+        V -adjust font and size
+    V -put a background image
+    V -maybe do a while loop to increment numbers/change label
+    -find out how to export to .apk - configure it
     -download it on your phone and test
 2. Make a simple app with GoDot which only shows the tilt degree of the device.
     -figure out how to get data from the phone's sensors
@@ -13,3 +13,5 @@ TO DO:
 4. Think of name
 5. Think of a theme/character
 6.
+...
+Add credits for fonts, pictures, info souces etc.
