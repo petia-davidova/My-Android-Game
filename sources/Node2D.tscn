@@ -26,7 +26,6 @@ margin/top = -1118.0
 margin/right = -1044.0
 margin/bottom = -1426.0
 custom_fonts/font = ExtResource( 2 )
-text = "1234"
 align = 1
 valign = 1
 percent_visible = 1.0
