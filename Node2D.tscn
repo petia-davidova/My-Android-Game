@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://background.jpg" type="Texture" id=2]
 [ext_resource path="res://QUICKOMETER.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://label_counter.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,26 +16,22 @@ texture = ExtResource( 2 )
 
 [node name="number" type="Label" parent="."]
 
+anchor/left = 3
+anchor/right = 3
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 558.0
-margin/top = 1122.0
-margin/right = 986.0
-margin/bottom = 1369.0
+margin/left = -403.0
+margin/top = 1131.0
+margin/right = -831.0
+margin/bottom = 1378.0
 custom_fonts/font = ExtResource( 3 )
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
-[node name="Timer" type="Timer" parent="."]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
+script/script = ExtResource( 4 )
 
 
