@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://background.jpg" type="Texture" id=1]
 [ext_resource path="res://QUICKOMETER.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://label_counter.gd" type="Script" id=3]
+[ext_resource path="res://gyro-label.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,18 +36,23 @@ script/script = ExtResource( 3 )
 
 [node name="gyro" type="Label" parent="."]
 
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 107.0
-margin/top = 321.0
-margin/right = 701.0
-margin/bottom = 557.0
+margin/left = -453.0
+margin/top = -592.0
+margin/right = -1047.0
+margin/bottom = -828.0
 custom_fonts/font = ExtResource( 2 )
 text = "1234"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script/script = ExtResource( 4 )
 
 
