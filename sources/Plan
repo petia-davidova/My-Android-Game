@@ -9,6 +9,7 @@ X      -find out how to export to .apk - configure it
 X      -download it on your phone and test
  2. Make a simple app with GoDot which only shows the tilt degree of the device.
       -figure out how to get data from the phone's sensors
+        http://docs.godotengine.org/en/stable/classes/class_input.html
  3. Find out how to run a custom application on your phone, not from the store
  4. Think of name
  5. Think of a theme/character
