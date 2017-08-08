@@ -33,4 +33,20 @@ lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 3 )
 
+[node name="gyro" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 107.0
+margin/top = 321.0
+margin/right = 701.0
+margin/bottom = 557.0
+custom_fonts/font = ExtResource( 2 )
+text = "1234"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 
