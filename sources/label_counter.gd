@@ -1,6 +1,6 @@
 extends Label
 
-var countdown_time = 100
+var countdown_time = 10
 var rounded_time = 0
 
 

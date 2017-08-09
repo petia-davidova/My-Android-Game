@@ -5,8 +5,8 @@ extends Label
 # var b = "textvar"
 
 func _ready():
-	set_text(str(0))
+	set_process(true)
 	
-func _get_data():
+func _process(delta):
 	var gyro = Input.get_gyroscope()
 	set_text(str(gyro.x))
