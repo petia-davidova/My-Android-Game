@@ -9,4 +9,6 @@ func _ready():
 	
 func _process(delta):
 	var gyro = Input.get_gyroscope()
-	set_text(str(gyro.x))
+	set_text(str("%.3f" % gyro.x))
+	#var decimal = 123.456789
+	#print("%10.3f" % decimal)
