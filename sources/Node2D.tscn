@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://background.jpg" type="Texture" id=1]
+[ext_resource path="res://pastel-bckg.png" type="Texture" id=1]
 [ext_resource path="res://QUICKOMETER.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://label_counter.gd" type="Script" id=3]
 [ext_resource path="res://gyro-label.gd" type="Script" id=4]

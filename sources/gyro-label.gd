@@ -9,3 +9,4 @@ func _ready():
 	
 func _get_data():
 	var gyro = Input.get_gyroscope()
+	set_text(str(gyro.x))
