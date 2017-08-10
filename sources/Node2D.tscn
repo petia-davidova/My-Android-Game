@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://pastel-bckg.png" type="Texture" id=1]
 [ext_resource path="res://QUICKOMETER.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://gyro-label.gd" type="Script" id=3]
 [ext_resource path="res://ball.png" type="Texture" id=4]
+[ext_resource path="res://container.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,10 +35,26 @@ lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
 
 transform/pos = Vector2( 605.831, 1828.52 )
 transform/scale = Vector2( 0.577344, 0.577344 )
 texture = ExtResource( 4 )
+
+[node name="container" type="Sprite" parent="StaticBody2D"]
+
+transform/pos = Vector2( 725.569, 1827.58 )
+transform/scale = Vector2( 1.81322, 1.81322 )
+texture = ExtResource( 5 )
 
 
