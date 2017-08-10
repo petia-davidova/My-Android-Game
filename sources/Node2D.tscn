@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://pastel-bckg.png" type="Texture" id=1]
 [ext_resource path="res://QUICKOMETER.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://gyro-label.gd" type="Script" id=3]
+[ext_resource path="res://ball.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,5 +33,11 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 605.831, 1828.52 )
+transform/scale = Vector2( 0.577344, 0.577344 )
+texture = ExtResource( 4 )
 
 
