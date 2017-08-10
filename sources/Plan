@@ -7,12 +7,17 @@ X      -put a background image
 X      -maybe do a while loop to increment numbers/change label
 X      -find out how to export to .apk - configure it
 X      -download it on your phone and test
- 2. Make a simple app with GoDot which only shows the tilt degree of the device.
-      -figure out how to get data from the phone's sensors
-        http://docs.godotengine.org/en/stable/classes/class_input.html
- 3. Find out how to run a custom application on your phone, not from the store
- 4. Think of name
- 5. Think of a theme/character
- 6.
+X 2. Make a simple app with GoDot which only shows the tilt degree of the device.
+X      -figure out how to get data from the phone's sensors
+         http://docs.godotengine.org/en/stable/classes/class_input.html
+X 3. Find out how to run a custom application on your phone, not from the store
+ 4. Add a sprite and learn how to control it with gyroscope
+ 5. Make the sprite jump/move all the time
+      -find out how to make endless game
+ 6. Make the sprite bounce off the edges of the scene
+      -use angles to figure out new directions
+ 7. Think of name
+ 8. Think of a theme/character
+ 9.
 ...
  Add credits for fonts, pictures, info souces etc.
