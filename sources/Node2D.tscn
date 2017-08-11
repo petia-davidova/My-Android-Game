@@ -47,11 +47,9 @@ bounce = 0.0
 
 [node name="container" type="Sprite" parent="StaticBody2D"]
 
-transform/pos = Vector2( 725.569, 1827.58 )
+transform/pos = Vector2( 786.285, 639.814 )
 transform/scale = Vector2( 1.81322, 1.81322 )
 texture = ExtResource( 4 )
-
-[node name="Node2D" type="Node2D" parent="StaticBody2D/container"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 
