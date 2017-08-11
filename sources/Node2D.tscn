@@ -51,6 +51,8 @@ transform/pos = Vector2( 725.569, 1827.58 )
 transform/scale = Vector2( 1.81322, 1.81322 )
 texture = ExtResource( 4 )
 
+[node name="Node2D" type="Node2D" parent="StaticBody2D/container"]
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 
 build_mode = 0
