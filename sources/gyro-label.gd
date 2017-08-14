@@ -1,14 +1,17 @@
 extends Label
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var countdown_time = 10
+var rounded_time = 0
+
 
 func _ready():
 	set_process(true)
 	
 func _process(delta):
-	var gyro = Input.get_gyroscope()
-	set_text(str("%.3f" % gyro.x))
-	#var decimal = 123.456789
-	#print("%10.3f" % decimal)
+	countdown_time -= delta
+	rounded_time = round(countdown_time)
+	set_text(str(rounded_time))
+	pass
+	if rounded_time <= 0:
+		set_text("Time's up!")
+		queue_free()
