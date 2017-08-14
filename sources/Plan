@@ -11,7 +11,17 @@ X 2. Make a simple app with GoDot which only shows the tilt degree of the device
 X      -figure out how to get data from the phone's sensors
          http://docs.godotengine.org/en/stable/classes/class_input.html
 X 3. Find out how to run a custom application on your phone, not from the store
+ 
+ To implement the functionality of the ball (or whatever it edns up being), 
+ there must be something like power bar to hold the value of the power for the 
+ ball. If the ball misses its necessary power ups, the power quickly drops and 
+ eventually it is lost, and the game is over. It will start with some value, 
+ and then it will start going down. 
+ 
  4. Add a sprite and learn how to control it with gyroscope
+      -try to make the object go up, instead of fall
+      -see how to control the speed/power it goes up to - maybe increase gravity
+       to slow it down?
  5. Make the sprite jump/move all the time
       -find out how to make endless game
  6. Make the sprite bounce off the edges of the scene
