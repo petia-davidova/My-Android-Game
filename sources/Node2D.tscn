@@ -67,32 +67,17 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( -20, -170 )
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 2.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-velocity/linear = Vector2( 0, 0 )
-velocity/angular = 0.0
-damp_override/linear = -1.0
-damp_override/angular = -1.0
+collision/margin = 0.08
 
-[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 
-transform/pos = Vector2( 544.328, 1403.42 )
-transform/scale = Vector2( 0.64272, 0.64272 )
+transform/pos = Vector2( 660, 1090 )
+transform/scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 5 )
 
 
