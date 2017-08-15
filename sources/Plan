@@ -19,7 +19,7 @@ X 3. Find out how to run a custom application on your phone, not from the store
  and then it will start going down. 
  
  4. Add a sprite and learn how to control it with gyroscope
-      -try to make the object go up, instead of fall
+X      -try to make the object go up, instead of fall
       -see how to control the speed/power it goes up to - maybe increase gravity
        to slow it down?
  5. Make the sprite jump/move all the time
