@@ -20,6 +20,7 @@ X 3. Find out how to run a custom application on your phone, not from the store
  
  4. Add a sprite and learn how to control it with gyroscope
 X      -try to make the object go up, instead of fall
+      -find out how to stop ball from leaving the screen
       -see how to control the speed/power it goes up to - maybe increase gravity
        to slow it down?
  5. Make the sprite jump/move all the time
