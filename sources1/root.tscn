@@ -32,7 +32,7 @@ texture = ExtResource( 1 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 74.2291, 0, 0, 15.5952, 742.186, 1654.67 )
+shapes/0/transform = Matrix32( 74.2291, 0, 0, 15.5952, 577.398, -340.264 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -43,13 +43,13 @@ bounce = 0.0
 
 [node name="pink-bar" type="Sprite" parent="platform"]
 
-transform/pos = Vector2( 724.016, 1571.07 )
+transform/pos = Vector2( 555.815, -430.694 )
 transform/scale = Vector2( 1, 0.331329 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
 
-transform/pos = Vector2( 742.186, 1654.67 )
+transform/pos = Vector2( 577.398, -340.264 )
 transform/scale = Vector2( 74.2291, 15.5952 )
 shape = SubResource( 1 )
 trigger = false
@@ -57,9 +57,11 @@ _update_shape_index = 0
 
 [node name="ball" type="KinematicBody2D" parent="."]
 
+transform/pos = Vector2( 10.6618, 9.99308 )
+transform/scale = Vector2( 1.33318, 1.31228 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 12.8115, 0, 0, 12.9293, 534.909, 847.383 )
+shapes/0/transform = Matrix32( 12.8115, 0, 0, 12.9293, 529.563, 310.16 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -68,13 +70,13 @@ script/script = ExtResource( 3 )
 
 [node name="purple-ball" type="Sprite" parent="ball"]
 
-transform/pos = Vector2( 534.277, 847.198 )
+transform/pos = Vector2( 529.663, 315.921 )
 transform/scale = Vector2( 0.60778, 0.60778 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
 
-transform/pos = Vector2( 534.909, 847.383 )
+transform/pos = Vector2( 529.563, 310.16 )
 transform/scale = Vector2( 12.8115, 12.9293 )
 shape = SubResource( 2 )
 trigger = false
@@ -82,6 +84,7 @@ _update_shape_index = 0
 
 [node name="walls" type="StaticBody2D" parent="."]
 
+visibility/visible = false
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 242.682, 0, 0, 151.67, 1444.21, 7.72069 )
