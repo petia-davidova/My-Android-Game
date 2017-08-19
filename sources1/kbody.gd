@@ -1,11 +1,14 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+# variable for gravity - constant
+const GRAVITY = Vector2(0, 10)
+
+# variable for ball's velocity
+var velocity = Vector2()
 
 func _ready():
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
-	move(Vector2(-14.0, 3.0))
+	velocity += GRAVITY * delta
+	move(velocity)
