@@ -18,9 +18,10 @@ X 3. Find out how to run a custom application on your phone, not from the store
  eventually it is lost, and the game is over. It will start with some value, 
  and then it will start going down. 
  
- 4. Add a sprite and learn how to control it with gyroscope
+ 4. Add a sprite and learn how to control it with accelerometer
 X      -try to make the object go up, instead of fall
 X      -find out how to stop ball from leaving the screen
+X      -figure out how to control the character with tilting
       -see how to control the speed/power it goes up to - maybe increase gravity
        to slow it down?
  5. Make the sprite jump/move all the time
