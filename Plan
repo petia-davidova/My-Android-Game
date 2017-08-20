@@ -18,19 +18,25 @@ X 3. Find out how to run a custom application on your phone, not from the store
  eventually it is lost, and the game is over. It will start with some value, 
  and then it will start going down. 
  
- 4. Add a sprite and learn how to control it with accelerometer
+X 4. Add a sprite and learn how to control it with accelerometer
 X      -try to make the object go up, instead of fall
 X      -find out how to stop ball from leaving the screen
 X      -figure out how to control the character with tilting
-      -see how to control the speed/power it goes up to - maybe increase gravity
+X      -make it bounce
+X      -see how to control the speed/power it goes up to - maybe increase gravity
        to slow it down?
- 5. Make the sprite jump/move all the time
+X 5. Get phone degrees of incline
+X      -figure out which sensor you need and how to implement it - accelerometer
+X      -figure out how to turn the data from the sensor into actual degrees
+ 6. Need to find out how to use the degrees of incline to calculate the bounce
+    direction
+ 7. Make the sprite jump/move all the time
       -find out how to make endless game
- 6. Make the sprite bounce off the edges of the scene
+ 8. Make the sprite bounce off the edges of the scene   
       -use angles to figure out new directions
- 7. Think of name
- 8. Think of a theme/character
- 9. Make an icon
+ 9. Think of name
+ 10. Think of a theme/character
+ 11. Make an icon
  
  You need to figure out how to implement the tilting into an input for
  a given sprite/character.
