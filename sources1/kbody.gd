@@ -15,7 +15,7 @@ func _ready():
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
-	motion.y += GRAVITY * delta/2
+#	motion.y += GRAVITY * delta/2
 #	if (Input.get_accelerometer().x > 0):
 #        velocity.x = -WALK_SPEED
 #	elif (Input.get_accelerometer().x < 0):
@@ -27,14 +27,16 @@ func _fixed_process(delta):
 #	motion = Vector2(8, 8)
 #	motion = initial_motion
 
-#	var angle_rad = asin(
-	print ("before: " + str(motion.x))
-	move(motion)
-	
-	if is_colliding():
+	var angle_rad = asin(Input.get_accelerometer().x/GRAVITY)
+	var angle_deg = angle_rad * (180/PI)
+	get_parent().get_node("Label").set_text(str(round(angle_deg)))
+#	print ("before: " + str(motion.x))
+#	move(motion)
+#	
+#	if is_colliding():
 #		var current_x = accel.x
 #		motion.x = current_x
 #		print ("after: " + str(motion.x))
-		motion.x = -motion.x
-		move(motion)
+#		motion.x = -motion.x
+#		move(motion)
 
