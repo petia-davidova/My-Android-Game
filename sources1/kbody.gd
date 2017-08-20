@@ -1,9 +1,13 @@
 extends KinematicBody2D
 
 # variable for gravity - constant
-const GRAVITY = 10.0
+const GRAVITY = 9.8
 const WALK_SPEED = 400
-var gyro = Input.get_gyroscope()
+var accel = Input.get_accelerometer()
+var initial_motion = Vector2(18, -10)
+var motion = Vector2(18, -10)
+var move_x = motion.x
+var move_y = motion.y
 # variable for ball's velocity
 var velocity = Vector2()
 
@@ -11,13 +15,26 @@ func _ready():
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
-	velocity.y += GRAVITY * delta
-	if (Input.get_accelerometer().x > 0):
-        velocity.x = -WALK_SPEED
-	elif (Input.get_accelerometer().x < 0):
-        velocity.x =  WALK_SPEED
-	else:
-        velocity.x = 0
+	motion.y += GRAVITY * delta/2
+#	if (Input.get_accelerometer().x > 0):
+#        velocity.x = -WALK_SPEED
+#	elif (Input.get_accelerometer().x < 0):
+#        velocity.x =  WALK_SPEED
+#	else:
+#        velocity.x = 0
+#
+#	var motion = velocity * delta
+#	motion = Vector2(8, 8)
+#	motion = initial_motion
 
-	var motion = velocity * delta
+#	var angle_rad = asin(
+	print ("before: " + str(motion.x))
 	move(motion)
+	
+	if is_colliding():
+#		var current_x = accel.x
+#		motion.x = current_x
+#		print ("after: " + str(motion.x))
+		motion.x = -motion.x
+		move(motion)
+

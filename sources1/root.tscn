@@ -19,17 +19,18 @@ radius = 10.0
 
 custom_solver_bias = 0.0
 a = Vector2( 0, 0 )
-b = Vector2( -0.010417, 16.746 )
+b = Vector2( 0, 16.8787 )
 
 [node name="root" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
 
-transform/pos = Vector2( 722.143, 1281.45 )
+transform/pos = Vector2( 720, 1280 )
 texture = ExtResource( 1 )
 
 [node name="platform" type="StaticBody2D" parent="."]
 
+visibility/visible = false
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 74.2291, 0, 0, 15.5952, 577.398, -340.264 )
@@ -57,27 +58,27 @@ _update_shape_index = 0
 
 [node name="ball" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( 10.6618, 9.99308 )
+transform/pos = Vector2( 1.81273, 12.2545 )
 transform/scale = Vector2( 1.33318, 1.31228 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 12.8115, 0, 0, 12.9293, 529.563, 310.16 )
+shapes/0/transform = Matrix32( 6.63597, 0, 0, 6.69698, 504.956, 1037.88 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
-collision/margin = 0.08
+collision/margin = 0.025
 script/script = ExtResource( 3 )
 
 [node name="purple-ball" type="Sprite" parent="ball"]
 
-transform/pos = Vector2( 529.663, 315.921 )
-transform/scale = Vector2( 0.60778, 0.60778 )
+transform/pos = Vector2( 502.978, 1036.81 )
+transform/scale = Vector2( 0.338194, 0.338194 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
 
-transform/pos = Vector2( 529.563, 310.16 )
-transform/scale = Vector2( 12.8115, 12.9293 )
+transform/pos = Vector2( 504.956, 1037.88 )
+transform/scale = Vector2( 6.63597, 6.69698 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -87,10 +88,10 @@ _update_shape_index = 0
 visibility/visible = false
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 242.682, 0, 0, 151.67, 1444.21, 7.72069 )
+shapes/0/transform = Matrix32( 242.682, 0, 0, 151.67, 1440, 0 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 3 )
-shapes/1/transform = Matrix32( 242.682, 0, 0, 151.67, 0.173157, 3.19873 )
+shapes/1/transform = Matrix32( 242.682, 0, 0, 151.67, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -101,7 +102,7 @@ bounce = 0.0
 
 [node name="right-wall" type="CollisionShape2D" parent="walls"]
 
-transform/pos = Vector2( 1444.21, 7.72069 )
+transform/pos = Vector2( 1440, 0 )
 transform/scale = Vector2( 242.682, 151.67 )
 shape = SubResource( 3 )
 trigger = false
@@ -109,7 +110,7 @@ _update_shape_index = 0
 
 [node name="left-wall" type="CollisionShape2D" parent="walls"]
 
-transform/pos = Vector2( 0.173157, 3.19873 )
+visibility/visible = false
 transform/scale = Vector2( 242.682, 151.67 )
 shape = SubResource( 3 )
 trigger = false
