@@ -4,14 +4,16 @@
 const GRAVITY = 9.8
 const WALK_SPEED = 400
 var accel = Input.get_accelerometer()
-var initial_motion = Vector2(18, -60)
-var motion = Vector2(5.6, -10)
+#var motion = Vector2(5.6, -10)
 var current_phone_angle = 0
-var current_ball_angle = atan(motion.y/motion.x) * (180/PI)
+#var current_ball_angle = atan(motion.y/motion.x) * (180/PI)
 # variable for ball's velocity
+var speed = 30.0
 var velocity = Vector2()
+var bounce_coeff = 1.0
 
 func _ready():
+	velocity = Vector2(29.0, -10) * speed
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
@@ -26,23 +28,27 @@ func _fixed_process(delta):
 #	var motion = velocity * delta
 #	motion = Vector2(8, 8)
 
-	move(motion)
-#	current_ball_angle = 180 - (90 + current_phone_angle + 
-
-#	var angle_rad = asin(Input.get_accelerometer().x/GRAVITY)
-	var phone_angle = asin(Input.get_accelerometer().x/GRAVITY) * (180/PI)
-	get_parent().get_node("accel-label").set_text(str(round(phone_angle)))
-#	print ("before: " + str(motion.x))
-
-	var ball_angle = atan(motion.y/motion.x) * (180/PI)
-	get_parent().get_node("ball-angle-label").set_text(str((ball_angle)))
+#	move(motion)
+#
+#	var phone_angle = asin(Input.get_accelerometer().x/GRAVITY) * (180/PI)
+#	get_parent().get_node("accel-label").set_text(str(round(phone_angle)))
+#
+#	var ball_angle = atan(motion.y/motion.x) * (180/PI)
+#	get_parent().get_node("ball-angle-label").set_text(str((ball_angle)))
 	
-	if is_colliding():
+#	if is_colliding():
 #		if motion.x > 0:
 #			if phone_angle<=0:
 #				var new_angle = 180 - (90 + current_phone_angle + current_ball_angle)
 #				motion.x = tan((90-new_angle)/motion.y)
 #				
-		motion.x = -motion.x
-		move(motion)
+#		motion.x = -motion.x
+#		move(motion)
 
+	var motion = move(velocity * delta)
+	if is_colliding():
+		var n = get_collision_normal()
+		motion = n.reflect(motion)
+		bounce_coeff += 0.001
+		velocity = n.reflect(velocity) * bounce_coeff
+		

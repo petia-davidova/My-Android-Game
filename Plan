@@ -38,9 +38,11 @@ X      -figure out how to turn the data from the sensor into actual degrees
  10. Think of a theme/character
  11. Make an icon
  
- You need to figure out how to implement the tilting into an input for
- a given sprite/character.
- You need to find out how to configure the collision polygon. 
- Interact with the user.
+  Interact with the user.
 ...
+ As the game score increases, so does the speed. To implement it the speed could
+ either increase on every bounce, which may make the game too ard too soon, or
+ increase after a certain number of bounces. So at first each bounce would give
+ the player x amout of points, then after the speed increases after e.g. 10x 
+ points, each bounce can be worth 2x points, or something simillar.
  Add credits for fonts, pictures, info souces etc.
