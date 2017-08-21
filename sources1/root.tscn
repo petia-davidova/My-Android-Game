@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://pastel-bckg.png" type="Texture" id=1]
 [ext_resource path="res://collision-bar.png" type="Texture" id=2]
 [ext_resource path="res://kbody.gd" type="Script" id=3]
 [ext_resource path="res://ball.png" type="Texture" id=4]
 [ext_resource path="res://QUICKOMETER.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://rigid-ball.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -59,6 +60,7 @@ _update_shape_index = 0
 
 [node name="ball" type="KinematicBody2D" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 1.81273, 12.2545 )
 transform/scale = Vector2( 1.33318, 1.31228 )
 input/pickable = false
@@ -119,6 +121,7 @@ _update_shape_index = 1
 
 [node name="accel-label" type="Label" parent="."]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -136,6 +139,7 @@ max_lines_visible = -1
 
 [node name="ball-angle-label" type="Label" parent="."]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -150,5 +154,44 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 8.84694, 0, 0, 8.78831, 1095.01, 304.248 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 6 )
+
+[node name="purple-ball1" type="Sprite" parent="RigidBody2D"]
+
+transform/pos = Vector2( 1092.37, 302.844 )
+transform/scale = Vector2( 0.450873, 0.443805 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="RigidBody2D"]
+
+transform/pos = Vector2( 1095.01, 304.248 )
+transform/scale = Vector2( 8.84694, 8.78831 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 
