@@ -11,9 +11,11 @@ var current_phone_angle = 0
 var speed = 30.0
 var velocity = Vector2()
 var bounce_coeff = 1.0
+var current_time
 
 func _ready():
 	velocity = Vector2(29.0, -10) * speed
+	current_time = OS.get_unix_time()
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
@@ -44,8 +46,13 @@ func _fixed_process(delta):
 #				
 #		motion.x = -motion.x
 #		move(motion)
+#	get_parent().get_node("walls").set_rot(-10)
 
+	if(OS.get_unix_time() > (current_time - 10)):
+		move(Vector2(0, 10))
+		
 	var motion = move(velocity * delta)
+	
 	if is_colliding():
 		var n = get_collision_normal()
 		motion = n.reflect(motion)
