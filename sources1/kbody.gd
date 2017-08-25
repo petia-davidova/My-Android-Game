@@ -14,7 +14,7 @@ var bounce_coeff = 1.0
 var current_time
 
 func _ready():
-	velocity = Vector2(29.0, 10) * speed
+	velocity = Vector2(0, 10) * speed
 	current_time = OS.get_unix_time()
 	set_fixed_process(true)
 	
@@ -48,7 +48,7 @@ func _fixed_process(delta):
 #		move(motion)
 #	get_parent().get_node("walls").set_rot(-10)
 
-	if(OS.get_unix_time() > (current_time - 100)):
+	if(OS.get_unix_time() > (current_time + 5)):
 		move(Vector2(10, -10))
 		
 	var motion = move(velocity * delta)
