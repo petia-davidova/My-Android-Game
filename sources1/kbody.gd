@@ -47,6 +47,7 @@ func _fixed_process(delta):
 		bounce_coeff += 0.001
 		velocity = n.reflect(velocity) * bounce_coeff
 		
+		
 func get_phone_angle():
 	var accel = Input.get_accelerometer()
 	var angle = acos(-accel.y/GRAVITY)
