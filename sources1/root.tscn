@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 10.3733, 10 )
 
 [sub_resource type="CircleShape2D" id=2]
 
@@ -34,7 +34,7 @@ texture = ExtResource( 1 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 74.2291, 0, 0, 15.5952, 697.978, -157.262 )
+shapes/0/transform = Matrix32( 71.6998, 19.2119, -4.03633, 15.0638, 750, 250 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 1 )
 shapes/1/transform = Matrix32( 74.2291, 0, 0, 15.5952, 740, 2320 )
@@ -54,7 +54,8 @@ texture = ExtResource( 2 )
 
 [node name="bar-col" type="CollisionShape2D" parent="platform"]
 
-transform/pos = Vector2( 697.978, -157.262 )
+transform/pos = Vector2( 750, 250 )
+transform/rot = -15.0
 transform/scale = Vector2( 74.2291, 15.5952 )
 shape = SubResource( 1 )
 trigger = false
@@ -74,7 +75,7 @@ transform/pos = Vector2( 1.81273, 12.2545 )
 transform/scale = Vector2( 1.33318, 1.31228 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 6.63597, 0, 0, 6.69698, 497.455, 611.145 )
+shapes/0/transform = Matrix32( 6.63597, 0, 0, 6.69698, 534.96, 1335.08 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -83,13 +84,13 @@ script/script = ExtResource( 3 )
 
 [node name="purple-ball" type="Sprite" parent="ball"]
 
-transform/pos = Vector2( 495.477, 610.075 )
+transform/pos = Vector2( 532.982, 1334.01 )
 transform/scale = Vector2( 0.338194, 0.338194 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
 
-transform/pos = Vector2( 497.455, 611.145 )
+transform/pos = Vector2( 534.96, 1335.08 )
 transform/scale = Vector2( 6.63597, 6.69698 )
 shape = SubResource( 2 )
 trigger = false
@@ -97,6 +98,7 @@ _update_shape_index = 0
 
 [node name="walls" type="StaticBody2D" parent="."]
 
+visibility/visible = false
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 242.682, 0, 0, 151.67, 1440, 0 )

@@ -8,13 +8,13 @@ var accel = Input.get_accelerometer()
 var current_phone_angle = 0
 #var current_ball_angle = atan(motion.y/motion.x) * (180/PI)
 # variable for ball's velocity
-var speed = 30.0
+var speed = 10.0
 var velocity = Vector2()
 var bounce_coeff = 1.0
 var current_time
 
 func _ready():
-	velocity = Vector2(0, 10) * speed
+	velocity = Vector2(10, -10) * speed
 	current_time = OS.get_unix_time()
 	set_fixed_process(true)
 	
@@ -48,13 +48,15 @@ func _fixed_process(delta):
 #		move(motion)
 #	get_parent().get_node("walls").set_rot(-10)
 
-	if(OS.get_unix_time() > (current_time + 5)):
-		move(Vector2(10, -10))
+#	if(OS.get_unix_time() > (current_time + 5)):
+#		move(Vector2(10, -10))
 		
 	var motion = move(velocity * delta)
 	
 	if is_colliding():
 		var n = get_collision_normal()
+		print("x: " + str(n.x) + " y: " + str(n.y))
+		print("x = " + str(((n.x*n.x)+(n.y*n.y))*cos(15)))
 		motion = n.reflect(motion)
 		bounce_coeff += 0.001
 		velocity = n.reflect(velocity) * bounce_coeff
