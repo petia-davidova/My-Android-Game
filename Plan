@@ -32,6 +32,7 @@ X      -figure out how to turn the data from the sensor into actual degrees
     direction
       -either make the collision shape rotate or calculate the modification
        needed for the reflect() vector
+      -accelerometer or gyro?? or both??
  7. Make the sprite jump/move all the time
       -find out how to make endless game
  8. Make the sprite bounce off the edges of the scene   
