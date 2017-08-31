@@ -164,4 +164,14 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="collectible" type="Sprite" parent="."]
+
+[node name="Area2D" type="Area2D" parent="collectible"]
+
+input/pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
 
