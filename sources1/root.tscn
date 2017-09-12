@@ -28,8 +28,12 @@ b = Vector2( 0, 16.8787 )
 
 [node name="background" type="Sprite" parent="."]
 
-transform/pos = Vector2( 700, 1280 )
+transform/pos = Vector2( 720, 1280 )
+transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="platform" type="StaticBody2D" parent="."]
 
@@ -76,7 +80,7 @@ transform/pos = Vector2( 1.81273, 12.2545 )
 transform/scale = Vector2( 1.33318, 1.31228 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 6.63597, 0, 0, 6.69698, 489.954, 809.274 )
+shapes/0/transform = Matrix32( 6.63597, 0, 0, 6.69698, 579.965, 184.407 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -85,13 +89,13 @@ script/script = ExtResource( 3 )
 
 [node name="purple-ball" type="Sprite" parent="ball"]
 
-transform/pos = Vector2( 487.976, 808.203 )
+transform/pos = Vector2( 577.987, 183.336 )
 transform/scale = Vector2( 0.338194, 0.338194 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
 
-transform/pos = Vector2( 489.954, 809.274 )
+transform/pos = Vector2( 579.965, 184.407 )
 transform/scale = Vector2( 6.63597, 6.69698 )
 shape = SubResource( 2 )
 trigger = false
@@ -167,28 +171,12 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="collectible" type="Sprite" parent="."]
-
-visibility/visible = false
-
-[node name="Area2D" type="Area2D" parent="collectible"]
-
-input/pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="collectible/Area2D"]
-
-trigger = false
-_update_shape_index = -1
-
 [node name="camera" type="Camera2D" parent="."]
 
+transform/pos = Vector2( 720, 1280 )
 anchor_mode = 1
 rotating = false
-current = false
+current = true
 zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000

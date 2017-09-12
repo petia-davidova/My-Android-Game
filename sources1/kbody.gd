@@ -13,32 +13,35 @@ var bounce_coeff = 1.0
 
 
 func _ready():
-	velocity = Vector2(10, -10) * speed
+	velocity = Vector2(10, 10) * speed
 	last_phone_angle = get_phone_angle()
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
 	var motion = move(velocity * delta)
 	
-	var current_phone_angle = get_phone_angle()
-	if (current_phone_angle != last_phone_angle || 1 == 1):
-		var magnitude = sqrt((velocity.x * velocity.x) + (velocity.y*velocity.y))
-		if (velocity.x != 0):
-			ball_angle = atan(velocity.y/velocity.x)
-		else:
-			if (velocity.y > 0):
-				ball_angle = -PI/2
-			else:
-				ball_angle = PI/2
-		ball_angle = ball_angle - (current_phone_angle - last_phone_angle)
-		var new_x = magnitude * cos(ball_angle)
-		var new_y = magnitude * sin(ball_angle)
-		velocity = Vector2(new_x, new_y)
-		last_phone_angle = current_phone_angle
-		
-	get_parent().get_node("ball-angle-label").set_text("b: " + str((ball_angle)))
-	get_parent().get_node("accel-label").set_text("ph: " + str(round(current_phone_angle * 180/PI)))
 	
+	
+#	Code with dad !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+#	var current_phone_angle = get_phone_angle()
+#	if (current_phone_angle != last_phone_angle || 1 == 1):
+#		var magnitude = sqrt((velocity.x * velocity.x) + (velocity.y*velocity.y))
+#		if (velocity.x != 0):
+#			ball_angle = atan(velocity.y/velocity.x)
+#		else:
+#			if (velocity.y > 0):
+#				ball_angle = -PI/2
+#			else:
+#				ball_angle = PI/2
+#		ball_angle = ball_angle - (current_phone_angle - last_phone_angle)
+#		var new_x = magnitude * cos(ball_angle)
+#		var new_y = magnitude * sin(ball_angle)
+#		velocity = Vector2(new_x, new_y)
+#		last_phone_angle = current_phone_angle
+#		
+#	get_parent().get_node("ball-angle-label").set_text("b: " + str((ball_angle)))
+#	get_parent().get_node("accel-label").set_text("ph: " + str(round(current_phone_angle * 180/PI)))
+#	
 	if is_colliding():
 		var n = get_collision_normal()
 		print("x: " + str(n.x) + " y: " + str(n.y))
