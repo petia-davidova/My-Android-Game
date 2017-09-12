@@ -3,6 +3,7 @@ extends Camera2D
 var camera_pos = self.get_pos()
 
 func _ready():
+#	pass
 #	set_offset(get_viewport_rect().size / 2)
 	set_fixed_process(true)
 	print("initial cam pos: " + str(camera_pos))
