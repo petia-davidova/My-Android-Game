@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=1]
 
-[ext_resource path="res://pastel-bckg.png" type="Texture" id=1]
+[ext_resource path="res://long-bckg.png" type="Texture" id=1]
 [ext_resource path="res://collision-bar.png" type="Texture" id=2]
 [ext_resource path="res://kbody.gd" type="Script" id=3]
 [ext_resource path="res://ball.png" type="Texture" id=4]
@@ -28,7 +28,7 @@ b = Vector2( 0, 16.8787 )
 
 [node name="background" type="Sprite" parent="."]
 
-transform/pos = Vector2( 720, 1280 )
+transform/pos = Vector2( 720, 3000 )
 transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 __meta__ = {
