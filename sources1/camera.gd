@@ -12,7 +12,9 @@ func _fixed_process(delta):
 	print(str(camera_pos))
 	if camera_pos.y <= get_parent().get_node("ball").get_pos().y - get_viewport_rect().size.y + get_viewport_rect().size.y / 4:
 		camera_pos.y = get_parent().get_node("ball").get_pos().y - get_viewport_rect().size.y + get_viewport_rect().size.y / 4
+		print("iffffff")
 	else:
-		camera_pos.y = 2 + camera_pos.y + sqrt(camera_pos.y) * 2 * delta
+		camera_pos.y = 2 + camera_pos.y + sqrt(camera_pos.y) * 4 * delta
+		print("else")
 	self.set_pos(camera_pos)
 

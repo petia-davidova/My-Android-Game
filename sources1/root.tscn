@@ -4,9 +4,9 @@
 [ext_resource path="res://collision-bar.png" type="Texture" id=2]
 [ext_resource path="res://kbody.gd" type="Script" id=3]
 [ext_resource path="res://ball.png" type="Texture" id=4]
-[ext_resource path="res://right-wall.gd" type="Script" id=5]
-[ext_resource path="res://QUICKOMETER.fnt" type="BitmapFont" id=6]
-[ext_resource path="res://camera.gd" type="Script" id=7]
+[ext_resource path="res://QUICKOMETER.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://camera.gd" type="Script" id=6]
+[ext_resource path="res://right-wall.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,15 +21,14 @@ radius = 10.0
 [sub_resource type="SegmentShape2D" id=3]
 
 custom_solver_bias = 0.0
-a = Vector2( 0, 0.0659326 )
-b = Vector2( 0, 16.8787 )
+a = Vector2( 0, -1.97471 )
+b = Vector2( 0, 19.738 )
 
 [node name="main" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
 
 transform/pos = Vector2( 720, 3000 )
-transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -101,40 +100,6 @@ shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="walls" type="StaticBody2D" parent="."]
-
-visibility/visible = false
-input/pickable = false
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 242.682, 0, 0, 151.67, 1440, 0 )
-shapes/0/trigger = false
-shapes/1/shape = SubResource( 3 )
-shapes/1/transform = Matrix32( 242.682, 0, 0, 151.67, 0, 0 )
-shapes/1/trigger = false
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="right-wall" type="CollisionShape2D" parent="walls"]
-
-transform/pos = Vector2( 1440, 0 )
-transform/scale = Vector2( 242.682, 151.67 )
-shape = SubResource( 3 )
-trigger = false
-_update_shape_index = 0
-script/script = ExtResource( 5 )
-
-[node name="left-wall" type="CollisionShape2D" parent="walls"]
-
-visibility/visible = false
-transform/scale = Vector2( 242.682, 151.67 )
-shape = SubResource( 3 )
-trigger = false
-_update_shape_index = 1
-
 [node name="accel-label" type="Label" parent="."]
 
 visibility/visible = false
@@ -146,7 +111,7 @@ margin/left = 200.0
 margin/top = 420.0
 margin/right = 740.0
 margin/bottom = 660.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
 text = "000"
 align = 1
 percent_visible = 1.0
@@ -164,7 +129,7 @@ margin/left = 190.0
 margin/top = 120.0
 margin/right = 730.0
 margin/bottom = 360.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
 text = "000"
 align = 1
 percent_visible = 1.0
@@ -184,12 +149,47 @@ limit/right = 10000000
 limit/bottom = 10000000
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
-smoothing/enable = false
+smoothing/enable = true
 smoothing/speed = 5.0
 drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+script/script = ExtResource( 6 )
+
+[node name="walls" type="StaticBody2D" parent="camera"]
+
+transform/pos = Vector2( -720, -1280 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 242.682, 0, 0, 284.271, 1440, 389.061 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 3 )
+shapes/1/transform = Matrix32( 242.682, 0, 0, 276.781, 0, 546.562 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="right-wall" type="CollisionShape2D" parent="camera/walls"]
+
+visibility/visible = false
+transform/pos = Vector2( 1440, 389.061 )
+transform/scale = Vector2( 242.682, 284.271 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
 script/script = ExtResource( 7 )
+
+[node name="left-wall" type="CollisionShape2D" parent="camera/walls"]
+
+transform/pos = Vector2( 0, 546.562 )
+transform/scale = Vector2( 242.682, 276.781 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 1
 
 
